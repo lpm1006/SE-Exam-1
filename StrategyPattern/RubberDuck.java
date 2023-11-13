@@ -1,17 +1,17 @@
 package StrategyPattern;
 
 import StrategyPattern.FlyBehavior.FlyBehavior;
-import StrategyPattern.FlyBehavior.FlyWithWings;
-import StrategyPattern.QuackBehavior.Quack;
+import StrategyPattern.FlyBehavior.FlyNoWay;
 import StrategyPattern.QuackBehavior.QuackBehavior;
+import StrategyPattern.QuackBehavior.Squeak;
 
-public abstract class Duck {
+public class RubberDuck extends Duck {
 	FlyBehavior flyBehavior;
 	QuackBehavior quackBehavior;
 	
-	Duck() {
-		flyBehavior = new FlyWithWings();
-		quackBehavior = new Quack();
+	RubberDuck() {
+		flyBehavior = new FlyNoWay();
+		quackBehavior = new Squeak();
 	}
 	
 	public void performFly() {
